@@ -45,4 +45,6 @@ style : CSS 실습 코드 정리
 
 - `docs/index.html`은 저장소의 학습 자료(README.md) 구성이 변경되거나 업데이트될 때마다 동일하게 갱신해야 합니다.
 - 디자인은 Bootstrap 5를 활용하여 반응형 웹 및 세련된 레이아웃을 구현합니다.
+- 디자인은 Bootstrap 5의 가장 최신 릴리스 버전을 활용하여 구성합니다.
 - 슬라이드와 실습 경로 링크는 `docs/` 경로 기준으로 상대 경로(`../slides/`, `../exercises/`)를 활용하여 작성합니다.
+- 단, GitHub Pages 배포 시 웹 루트 외부 폴더(`../`)에 위치한 PDF 슬라이드는 접근 불가능하므로, `slides/` 폴더를 `docs/slides/`로 복사하여 웹 내부 경로로 제공하고, 실습 코드는 GitHub 원본 코드 뷰 링크(예: `https://github.com/.../tree/main/exercises/...`)로 연결합니다.
