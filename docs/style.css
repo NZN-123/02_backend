@@ -37,6 +37,7 @@ body {
     background-image: radial-gradient(circle at 10% 20%, rgba(56, 189, 248, 0.05) 0%, transparent 40%),
                       radial-gradient(circle at 90% 80%, rgba(129, 140, 248, 0.05) 0%, transparent 40%);
     background-attachment: fixed;
+    word-break: keep-all;
 }
 
 h1, h2, h3, h4, h5, h6, .navbar-brand, .hero-title, .accordion-button {
