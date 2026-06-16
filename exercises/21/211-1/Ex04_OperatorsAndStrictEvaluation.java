@@ -15,6 +15,18 @@ public class Ex04_OperatorsAndStrictEvaluation {
         System.out.println("단축 평가 결과: " + result);
         System.out.println("증가 연산 수행 여부 (count): " + count); // 0 유지
 
+        // 2-2. 논리 연산자(&&, ||) vs 비트 연산자(&, |)의 논리 연산 차이
+        System.out.println("\n--- 2-2. 논리 연산자(&&) vs 비트 연산자(&) 차이 ---");
+        // 논리 연산자(&&)는 단축 평가를 수행하여 첫 번째 조건만으로 결과가 결정되면 우항을 평가하지 않습니다.
+        int count1 = 0;
+        boolean logicAnd = (false && (++count1 > 0)); // false이므로 우항은 아예 실행하지 않음
+        System.out.println("논리 && 연산 결과: " + logicAnd + ", count1: " + count1); // count1은 0으로 유지
+
+        // 비트 연산자(&)를 boolean 값에 사용하면 단축 평가를 하지 않고 무조건 우항까지 평가합니다.
+        int count2 = 0;
+        boolean bitAnd = (false & (++count2 > 0)); // false가 확정되었어도 우항의 ++count2가 실행됨
+        System.out.println("비트 & 연산 결과: " + bitAnd + ", count2: " + count2); // count2는 1로 증가
+
         // 3. 참조 비교 (==) vs 동등 비교 (equals())
         System.out.println("\n--- 3. 문자열 비교 (== vs equals()) ---");
         String str1 = "Java"; // String Constant Pool(상수 풀)에 생성되어 공유됨
