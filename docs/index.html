@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바 백엔드 개발 학습 자료</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts Inter & Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bs-body-bg: #0f172a;
+            --bs-body-color: #f1f5f9;
+            --primary-accent: #38bdf8;
+            --secondary-accent: #818cf8;
+            --card-bg: #1e293b;
+            --border-color: #334155;
+            --font-outfit: 'Outfit', 'Inter', 'Noto Sans KR', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-outfit);
+            background-color: var(--bs-body-bg);
+            color: var(--bs-body-color);
+            background-image: radial-gradient(circle at 10% 20%, rgba(56, 189, 248, 0.05) 0%, transparent 40%),
+                              radial-gradient(circle at 90% 80%, rgba(129, 140, 248, 0.05) 0%, transparent 40%);
+            background-attachment: fixed;
+        }
+
+        .navbar {
+            background-color: rgba(15, 23, 42, 0.8) !important;
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            color: var(--primary-accent) !important;
+        }
+
+        .hero-section {
+            padding: 5rem 0 3rem;
+            text-align: center;
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary-accent), var(--secondary-accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+        }
+
+        .badge-tech {
+            font-size: 0.85rem;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-weight: 500;
+            background: rgba(56, 189, 248, 0.1);
+            color: var(--primary-accent);
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            margin: 0 0.25rem 0.5rem;
+        }
+
+        .card-custom {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .card-custom:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-accent);
+        }
+
+        .quick-link-btn {
+            background-color: rgba(56, 189, 248, 0.05);
+            border: 1px solid var(--border-color);
+            color: var(--bs-body-color);
+            padding: 0.75rem 1.25rem;
+            border-radius: 12px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+
+        .quick-link-btn:hover {
+            background-color: var(--primary-accent);
+            border-color: var(--primary-accent);
+            color: #0f172a;
+        }
+
+        .accordion-item {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            margin-bottom: 1rem;
+            border-radius: 12px !important;
+            overflow: hidden;
+        }
+
+        .accordion-button {
+            background-color: var(--card-bg);
+            color: var(--bs-body-color);
+            font-weight: 600;
+            border: none;
+            padding: 1.25rem;
+        }
+
+        .accordion-button:not(.collapsed) {
+            background-color: rgba(56, 189, 248, 0.08);
+            color: var(--primary-accent);
+            box-shadow: none;
+        }
+
+        .accordion-button::after {
+            filter: invert(1);
+        }
+
+        .accordion-body {
+            background-color: rgba(15, 23, 42, 0.4);
+            border-top: 1px solid var(--border-color);
+        }
+
+        .table-custom {
+            color: var(--bs-body-color);
+            margin-bottom: 0;
+        }
+
+        .table-custom th {
+            border-bottom: 2px solid var(--border-color);
+            font-weight: 600;
+            color: #94a3b8;
+        }
+
+        .table-custom td {
+            border-bottom: 1px solid var(--border-color);
+            vertical-align: middle;
+        }
+
+        .btn-action {
+            padding: 0.4rem 0.8rem;
+            font-size: 0.85rem;
+            border-radius: 8px;
+            font-weight: 500;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.2s ease;
+        }
+
+        .btn-slide {
+            background-color: rgba(239, 68, 68, 0.1);
+            color: #f87171;
+            border: 1px solid rgba(239, 68, 68, 0.2);
+        }
+
+        .btn-slide:hover {
+            background-color: #ef4444;
+            color: white;
+        }
+
+        .btn-exercise {
+            background-color: rgba(16, 185, 129, 0.1);
+            color: #34d399;
+            border: 1px solid rgba(16, 185, 129, 0.2);
+        }
+
+        .btn-exercise:hover {
+            background-color: #10b981;
+            color: white;
+        }
+
+        .text-muted-custom {
+            color: #64748b;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#"><i class="fa-solid fa-graduation-cap me-2"></i>AIBE 7th Backend</a>
+            <span class="navbar-text text-muted-custom d-none d-sm-inline">
+                자바 백엔드 개발 과정
+            </span>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="container hero-section">
+        <h1 class="hero-title">자바 백엔드 개발 학습 자료</h1>
+        <p class="lead text-muted-custom mb-4">자바 백엔드 개발 입문 과정의 차시별 슬라이드와 실습 예제 저장소입니다.</p>
+        <div class="d-flex flex-wrap justify-content-center">
+            <span class="badge-tech"><i class="fa-brands fa-java me-1"></i> Java</span>
+            <span class="badge-tech"><i class="fa-brands fa-git-alt me-1"></i> Git</span>
+            <span class="badge-tech"><i class="fa-brands fa-markdown me-1"></i> Markdown</span>
+            <span class="badge-tech"><i class="fa-solid fa-gears me-1"></i> Environment</span>
+        </div>
+    </div>
+
+    <div class="container mb-5">
+        <!-- Quick Links -->
+        <div class="row g-3 mb-5">
+            <div class="col-md-6">
+                <div class="card p-4 card-custom">
+                    <h5 class="card-title mb-3"><i class="fa-solid fa-folder-open text-info me-2"></i>전체 슬라이드</h5>
+                    <p class="text-muted-custom card-text">이론 및 개념 설명이 담긴 전체 강의자료 PDF가 저장된 경로로 이동합니다.</p>
+                    <a href="../slides/" class="quick-link-btn"><i class="fa-solid fa-arrow-right-to-bracket"></i> slides/ 바로가기</a>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card p-4 card-custom">
+                    <h5 class="card-title mb-3"><i class="fa-solid fa-laptop-code text-success me-2"></i>전체 실습 코드</h5>
+                    <p class="text-muted-custom card-text">수업 시간에 다루는 단계별 자바 소스코드 및 문제 해결용 실습 디렉토리로 이동합니다.</p>
+                    <a href="../exercises/" class="quick-link-btn"><i class="fa-solid fa-arrow-right-to-bracket"></i> exercises/ 바로가기</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Study Materials (Accordion) -->
+        <h3 class="mb-4"><i class="fa-solid fa-book-open-reader me-2"></i>학습 자료 목록</h3>
+        <div class="accordion" id="studyAccordion">
+            
+            <!-- Category 20 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="heading20">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse20" aria-expanded="true" aria-controls="collapse20">
+                        20. 자바 백엔드 개발 기초
+                    </button>
+                </h2>
+                <div id="collapse20" class="accordion-collapse collapse show" aria-labelledby="heading20" data-bs-parent="#studyAccordion">
+                    <div class="accordion-body">
+                        <div class="mb-3">
+                            <span class="badge bg-secondary me-1"><i class="fa-brands fa-java me-1"></i> Java</span>
+                            <span class="badge bg-secondary"><i class="fa-brands fa-git-alt me-1"></i> Git</span>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table table-custom">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 15%;">차시</th>
+                                        <th style="width: 45%;">주제</th>
+                                        <th style="width: 20%;">슬라이드</th>
+                                        <th style="width: 20%;">실습</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>201</td>
+                                        <td>자바 백엔드 개발 환경 구축</td>
+                                        <td><a href="../slides/20/201_자바 백엔드 개발 환경 구축.pdf" class="btn-action btn-slide" target="_blank"><i class="fa-solid fa-file-pdf"></i> PDF</a></td>
+                                        <td><span class="text-muted">-</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>202</td>
+                                        <td>취업 목적의 개발자 회고 작성법</td>
+                                        <td><a href="../slides/20/202_취업 목적의 개발자 회고 작성법.pdf" class="btn-action btn-slide" target="_blank"><i class="fa-solid fa-file-pdf"></i> PDF</a></td>
+                                        <td><span class="text-muted">-</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category 21 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="heading21">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse21" aria-expanded="false" aria-controls="collapse21">
+                        21. 자바 프로그래밍 기초
+                    </button>
+                </h2>
+                <div id="collapse21" class="accordion-collapse collapse" aria-labelledby="heading21" data-bs-parent="#studyAccordion">
+                    <div class="accordion-body">
+                        <div class="mb-3">
+                            <span class="badge bg-secondary"><i class="fa-brands fa-java me-1"></i> Java</span>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table table-custom">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 15%;">차시</th>
+                                        <th style="width: 45%;">주제</th>
+                                        <th style="width: 20%;">슬라이드</th>
+                                        <th style="width: 20%;">실습</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>211-1</td>
+                                        <td>Java 문법</td>
+                                        <td><a href="../slides/21/211-1_Java 문법.pdf" class="btn-action btn-slide" target="_blank"><i class="fa-solid fa-file-pdf"></i> PDF</a></td>
+                                        <td><a href="../exercises/21/211-1/" class="btn-action btn-exercise"><i class="fa-solid fa-folder"></i> 실습</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>211-2</td>
+                                        <td>흐름제어와 컬렉션</td>
+                                        <td><a href="../slides/21/211-2_흐름제어와 컬렉션.pdf" class="btn-action btn-slide" target="_blank"><i class="fa-solid fa-file-pdf"></i> PDF</a></td>
+                                        <td><a href="../exercises/21/211-2/" class="btn-action btn-exercise"><i class="fa-solid fa-folder"></i> 실습</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        
+        <!-- Folder Rules -->
+        <div class="card mt-5 p-4 card-custom">
+            <h5 class="card-title mb-3"><i class="fa-solid fa-circle-info text-warning me-2"></i>폴더 규칙</h5>
+            <ul class="mb-0 text-muted-custom">
+                <li><code>slides/{차시코드 앞 2자리}</code>: 해당 분류의 강의 자료 PDF 파일</li>
+                <li><code>exercises/{차시코드 앞 2자리}/{차시코드}</code>: 해당 차시별 실습 코드 디렉토리</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center py-4 mt-5 border-top border-secondary">
+        <p class="text-muted-custom mb-0">&copy; 2026 AIBE 7th Backend. All rights reserved.</p>
+    </footer>
+
+    <!-- Bootstrap 5 Bundle JS (including Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
