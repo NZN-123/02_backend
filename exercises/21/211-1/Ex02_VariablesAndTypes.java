@@ -25,6 +25,26 @@ public class Ex02_VariablesAndTypes {
         System.out.println("char '가'의 정수값 표현: " + (int) c);
         System.out.println("boolean 값: " + isJavaFun);
 
+        // 1-2. char 타입과 숫자 연산 (알파벳 기준 대소문자 변환)
+        System.out.println("\n--- 1-2. char 타입과 숫자 연산 ---");
+        char lowerCase = 'a';
+        // 자바에서 char와 숫자의 연산 결과는 int 타입이 되므로, 다시 char로 강제 형변환(Casting)이 필요합니다.
+        char upperCase = (char) (lowerCase - 32); 
+        System.out.println("소문자 'a'를 대문자로 변환 (a - 32): " + upperCase); // 'A'
+
+        char upperB = 'B';
+        char lowerB = (char) (upperB + 32);
+        System.out.println("대문자 'B'를 소문자로 변환 (B + 32): " + lowerB); // 'b'
+
+        // 대소문자 간의 아스키코드 차이 확인
+        int diff = 'a' - 'A';
+        System.out.println("소문자 'a'와 대문자 'A'의 아스키코드 차이: " + diff); // 32
+
+        // 문자에 직접 덧셈하여 다음 문자 구하기
+        char startChar = 'A';
+        char nextChar = (char) (startChar + 1);
+        System.out.println("'A'의 다음 알파벳 ('A' + 1): " + nextChar); // 'B'
+
         // 2. 형변환 (Type Casting)
         System.out.println("\n--- 2. 형변환 (Casting) ---");
         
