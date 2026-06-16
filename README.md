@@ -37,7 +37,8 @@
 
 | 차시 | 주제 | 슬라이드 | 실습 |
 | --- | --- | --- | --- |
-| 211-1 | Java 문법 | - | [exercises/21/211-1/](exercises/21/211-1/) |
+| 211-1 | Java 문법 | [PDF](<slides/21/211-1_Java 문법.pdf>) | [exercises/21/211-1/](exercises/21/211-1/) |
+| 211-2 | 흐름제어와 컬렉션 | - | [exercises/21/211-2/](exercises/21/211-2/) |
 
 </details>
 
