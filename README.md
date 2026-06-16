@@ -26,6 +26,18 @@
 | --- | --- | --- | --- |
 | 201 | 자바 백엔드 개발 환경 구축 | [PDF](<slides/20/201_자바 백엔드 개발 환경 구축.pdf>) | - |
 | 202 | 취업 목적의 개발자 회고 작성법 | [PDF](<slides/20/202_취업 목적의 개발자 회고 작성법.pdf>) | - |
+</details>
+
+<details>
+<summary>21. 자바 프로그래밍 기초</summary>
+
+<br>
+
+![Java](https://img.shields.io/badge/Java-007396?style=flat-square&logo=openjdk&logoColor=white)
+
+| 차시 | 주제 | 슬라이드 | 실습 |
+| --- | --- | --- | --- |
+| 211-1 | Java 문법 | - | [exercises/21/211-1/](exercises/21/211-1/) |
 
 </details>
 
