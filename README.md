@@ -39,6 +39,9 @@
 | --- | --- | --- | --- |
 | 211-1 | Java 문법 | [PDF](<slides/21/211-1_Java 문법.pdf>) | [exercises/21/211-1/](exercises/21/211-1/) |
 | 211-2 | 흐름제어와 컬렉션 | [PDF](<slides/21/211-2_흐름제어와 컬렉션.pdf>) | [exercises/21/211-2/](exercises/21/211-2/) |
+| 212-1 | 코딩테스트와 DSA | [PDF](<slides/21/212-1_코딩테스트와 DSA.pdf>) | - |
+| 212-2 | Java DSA I | [PDF](<slides/21/212-2_Java DSA I.pdf>) | [exercises/21/212-2/](exercises/21/212-2/) |
+| 212-3 | Java DSA II | [PDF](<slides/21/212-3_Java DSA II.pdf>) | - |
 
 </details>
 
