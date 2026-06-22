@@ -1,5 +1,5 @@
 /**
- * 실습 221-1. 4단계: Static 제약 조건
+ * 실습 221-1. 5단계: Static 제약 조건
  * 
  * [학습 포인트]
  * 1. 'static' 변수/메서드는 인스턴스가 아닌 클래스에 종속되며, JVM 메서드 영역(Method Area)에 로드됩니다.
@@ -43,9 +43,9 @@ class UserAccount {
     }
 }
 
-public class Ex04_StaticConstraint {
+public class Ex05_StaticConstraint {
     public static void main(String[] args) {
-        System.out.println("=== 4단계: static 키워드 및 정적 메서드 제약 조건 실습 ===");
+        System.out.println("=== 5단계: static 키워드 및 정적 메서드 제약 조건 실습 ===");
 
         // 1. 객체를 생성하지 않은 시점에서 static 메서드 호출 테스트
         // 클래스명으로 즉시 접근 가능

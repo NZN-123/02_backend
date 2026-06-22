@@ -1,5 +1,5 @@
 /**
- * 실습 221-1. 5단계: 내부 클래스(Inner Class)와 메모리 누수
+ * 실습 221-1. 6단계: 내부 클래스(Inner Class)와 메모리 누수
  * 
  * [학습 포인트]
  * 1. 비정적 내부 클래스(Non-static Inner Class)는 바깥 클래스 인스턴스에 대한 '숨은 외부 참조(Outer.this)'를 가집니다.
@@ -47,9 +47,9 @@ class OuterSafe {
     }
 }
 
-public class Ex05_InnerClassMemoryLeak {
+public class Ex06_InnerClassMemoryLeak {
     public static void main(String[] args) {
-        System.out.println("=== 5단계: 내부 클래스의 아웃터 참조에 의한 메모리 누수 예방 실습 ===");
+        System.out.println("=== 6단계: 내부 클래스의 아웃터 참조에 의한 메모리 누수 예방 실습 ===");
 
         // 1. 비정적 내부 클래스의 인스턴스 생성 흐름
         // 반드시 바깥 객체를 먼저 생성한 후에만 내부 클래스 객체를 생성할 수 있습니다.

@@ -1,5 +1,5 @@
 /**
- * 실습 221-1. 2단계: 생성자 오버로딩 & this 체이닝
+ * 실습 221-1. 4단계: 생성자 오버로딩 & this 체이닝
  * 
  * [학습 포인트]
  * 1. 생성자(Constructor)는 반환 타입이 없으며, 이름은 클래스명과 동일해야 합니다.
@@ -48,9 +48,9 @@ class SmartPhone {
     }
 }
 
-public class Ex02_ConstructorAndThis {
+public class Ex04_ConstructorAndThis {
     public static void main(String[] args) {
-        System.out.println("=== 2단계: 생성자 오버로딩과 this() 실습 ===");
+        System.out.println("=== 4단계: 생성자 오버로딩과 this() 실습 ===");
 
         // 1. 커스텀 생성자를 통해 객체 생성
         System.out.println("--- 1. 커스텀 생성자로 폰 생성 ---");
