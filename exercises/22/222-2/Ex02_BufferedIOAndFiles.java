@@ -81,15 +81,15 @@ public class Ex02_BufferedIOAndFiles {
 
     /**
      * Scanner로 콘솔 입력을 받아 버퍼 스트림을 통해 파일에 기록합니다.
+     * try-with-resources 구문에 BufferedWriter와 Scanner를 함께 묶어 자원의 자동 반환을 보장합니다.
      * 교육용 인터랙션 및 자동 실행 테스트의 무한 대기 방지를 위해 최대 3줄 입력 혹은 "exit" 입력 시 자동 종료됩니다.
      */
     private static void writeTextWithScanner(Path path) {
         System.out.println("콘솔에 텍스트를 입력하면 파일로 저장됩니다. (최대 3줄 또는 'exit' 입력 시 종료)");
         
-        // System.in 콘솔 스캐너 생성
-        Scanner scanner = new Scanner(System.in);
-        
-        try (BufferedWriter writer = Files.newBufferedWriter(path)) {
+        // try-with-resources 구문에 다중 자원(BufferedWriter, Scanner) 선언 및 자동 close 보장
+        try (BufferedWriter writer = Files.newBufferedWriter(path);
+             Scanner scanner = new Scanner(System.in)) {
             int lineCount = 0;
             while (lineCount < 3) {
                 System.out.print("입력 (" + (lineCount + 1) + "/3): ");
